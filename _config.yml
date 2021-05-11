@@ -1,0 +1,129 @@
+
+title: Hello, Here is work diary. #Your awesome title
+tagline: 🍟
+description: > # this means to ignore newlines until "baseurl"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+
+url: https://sohui96.github.io/ # the base hostname & protocol for your site
+baseurl: # the subpath of the site
+
+github:
+  username: sohui96
+
+permalink: /:year-:month/:title
+timezone: Asia/Seoul
+
+favicon: /assets/img/my.ico
+
+# Social info
+navigation:
+ - title: About
+   url: /about
+ - title: Category
+   url: /category
+ - title: Tags
+   url: /tags
+ - title: Archives
+   url: /archives
+
+# pages 추가 여기 추가
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+google_analytics: #UA—XXXXXXXX-X
+
+# Disqus
+# disqus: True
+comments:
+  provider: "disqus" 
+  disqus_shortname: nigella-kim #disqus shortname
+
+# Site Author
+user:
+  name: I'm Nigella.
+  pic: /assets/img/my.png
+  picAlt: "Hello"
+  job: Big Data Analyst & Developer
+  aboutme: true # comment this out if you don't need the 'about' page.
+  memo: 수다쟁이 개발자🍟
+
+# Site Footer
+footer:
+  links:
+    - label: "Email"
+      icon: /assets/img/my.ico
+      url: mailto:helloahri21@naver.com
+    - label: "GitHub"
+      icon: /assets/img/my.ico
+      url: "https://github.com/sohui96"
+
+exclude:
+  - README.md
+  - LICENSE
+  - github
+  - vendor
+  - Gemfile.lock
+  - Gemfile
+  - tools
+  - docs
+
+include:
+  - _pages
+
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+markdown: kramdown 
+
+# Filtering Content
+show_drafts: null
+limit_posts: 0
+future:      false
+unpublished: false
+
+gems:
+    - jekyll-paginate-v2
+
+pagination:
+    enabled: true
+    per_page: 2
+    limit: 0
+    sort_field: "date"
+    sort_reverse: true
+
+## 미완
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
+
+toc: true
+
+# Collections
+collections:
+  recipes:
+    output: true
+    permalink: /:collection/:path/
+    
+# Front Matter Defaults
+defaults:
+  # _posts
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+      read_time: true
+  # _recipes
+  - scope:
+      path: "_recipes"
+      type: recipes
+    values:
+      layout: post
+      read_time: true
